@@ -1,0 +1,39 @@
+name: TypeScript Type Check and Tests
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  typecheck-and-test:
+    name: Type Check, Tests & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js runtime
+        uses: actions/setup-node@v7
+        with:
+          node-version: 26
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify TypeScript types (tsc --noEmit)
+        run: npx tsc --noEmit
+
+      - name: Run Vitest unit tests
+        run: npm run test
+
+      - name: Verify compilation build
+        run: npm run build
