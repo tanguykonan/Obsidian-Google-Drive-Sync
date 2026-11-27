@@ -110,7 +110,11 @@ export const handleOAuthProtocolCallback = async (
 		plugin.settings.clientId.trim() ||
 		pendingAuthSession?.clientId ||
 		AUTH_CONFIG.DEFAULT_CLIENT_ID;
-	const clientSecret = plugin.settings.clientSecret.trim();
+	const clientSecret =
+		plugin.settings.clientSecret.trim() ||
+		(clientId === AUTH_CONFIG.DEFAULT_CLIENT_ID
+			? AUTH_CONFIG.DEFAULT_CLIENT_SECRET
+			: '');
 
 	pendingAuthSession = null;
 

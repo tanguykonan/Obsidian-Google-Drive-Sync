@@ -29,6 +29,8 @@ jobs:
         run: npm run test
 
       - name: Build plugin bundle
+        env:
+          DEFAULT_CLIENT_SECRET: ${{ secrets.DEFAULT_CLIENT_SECRET }}
         run: npm run build
 
       - name: Create GitHub release

@@ -141,24 +141,6 @@ export class SettingsTab extends PluginSettingTab {
 					placeholder: 'Enter secret passphrase',
 				},
 			},
-			{
-				name: 'Client ID',
-				desc: 'Optional custom Google Cloud OAuth client ID. When set, authentication connects directly to your own Google Cloud project.',
-				control: {
-					type: 'text',
-					key: 'clientId',
-					placeholder: 'Client ID',
-				},
-			},
-			{
-				name: 'Client secret',
-				desc: 'Optional client secret if required by your custom Google Cloud client configuration.',
-				control: {
-					type: 'text',
-					key: 'clientSecret',
-					placeholder: 'Client secret',
-				},
-			},
 		];
 	}
 

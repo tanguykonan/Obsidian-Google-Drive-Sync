@@ -152,8 +152,13 @@ export const refreshAccessToken = async (
 		const params: Record<string, string> = {
 			client_id: clientId,
 		};
-		if (t.settings.clientSecret) {
-			params.client_secret = t.settings.clientSecret.trim();
+		const clientSecret =
+			t.settings.clientSecret.trim() ||
+			(clientId === AUTH_CONFIG.DEFAULT_CLIENT_ID
+				? AUTH_CONFIG.DEFAULT_CLIENT_SECRET
+				: '');
+		if (clientSecret) {
+			params.client_secret = clientSecret;
 		}
 		params.grant_type = 'refresh_token';
 		params.refresh_token = token;

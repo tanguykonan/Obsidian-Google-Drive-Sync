@@ -18,6 +18,7 @@ export const ENDPOINTS = {
 /** OAuth 2.0 client identifiers, scopes, and PKCE character set */
 export const AUTH_CONFIG = {
 	DEFAULT_CLIENT_ID: '537080370122-8p3bki4j5h85pcf8u4uh1hmgnu1oierl.apps.googleusercontent.com',
+	DEFAULT_CLIENT_SECRET: process.env.DEFAULT_CLIENT_SECRET || '',
 	DEFAULT_SCOPES: 'https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.appdata',
 	PROTOCOL_ACTION: 'gdrive-oauth',
 	PKCE_CHARSET: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~',

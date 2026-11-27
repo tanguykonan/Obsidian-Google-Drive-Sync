@@ -104,10 +104,11 @@ export const getDriveClient = (t: ObsidianGoogleDrive) => {
 		const fields = include.length
 			? `nextPageToken,files(${include.join(',')})`
 			: 'nextPageToken,files(id,name,description,mimeType,starred,properties,modifiedTime,trashed)';
+		const sortOrder = order === 'ascending' ? 'asc' : 'desc';
 
 		return drive
 			.get(
-				`drive/v3/files?orderBy=modifiedTime ${order}&pageSize=${pageSize}&fields=${fields}${query}${token}`,
+				`drive/v3/files?orderBy=modifiedTime ${sortOrder}&pageSize=${pageSize}&fields=${fields}${query}${token}`,
 			)
 			.json<{ files: FileMetadata[]; nextPageToken?: string }>();
 	};
