@@ -1,12 +1,12 @@
-<h1 align="center">Google Drive Sync</h1>
+<h1 align="center">Google Drive Sync Plus</h1>
 
 ![Google Drive Sync Command Palette](examples/command-palette.png)
 
-Google Drive Sync provides secure, frictionless, and zero-server synchronization between your local Obsidian vault and Google Drive across desktop and mobile devices.
+Google Drive Sync Plus provides secure, frictionless, and zero-server synchronization between your local Obsidian vault and Google Drive across desktop and mobile devices.
 
 Designed around a local-first philosophy, the plugin establishes a direct connection between your device and Google Drive without routing your notes through any proprietary intermediate backend or proxy servers. Your files, revision metadata, and authentication tokens remain strictly between your Obsidian client and your personal Google account.
 
-For users demanding complete confidentiality, Google Drive Sync includes optional zero-knowledge end-to-end encryption. Vault files are encrypted locally using AES-256-GCM and PBKDF2-SHA256 before upload, ensuring that neither Google nor anyone else can inspect your notes without your master passphrase.
+For users demanding complete confidentiality, Google Drive Sync Plus includes optional zero-knowledge end-to-end encryption. Vault files are encrypted locally using AES-256-GCM and PBKDF2-SHA256 before upload, ensuring that neither Google nor anyone else can inspect your notes without your master passphrase.
 
 Built-in safety features protect against data loss in multi-device workflows: visual side-by-side conflict resolution ensures conflicting edits are never overwritten silently, Google Drive revision history allows restoring older snapshots on demand, and resilient network retry mechanisms ensure reliable syncing even on unstable mobile connections.
 
@@ -23,7 +23,7 @@ Built-in safety features protect against data loss in multi-device workflows: vi
 
 ## Getting started
 
-1. Install and enable **Google Drive Sync** from Community plugins.
+1. Install and enable **Google Drive Sync Plus** from Community plugins.
 2. Select **Connect with Google Drive** in the plugin settings.
 3. Approve access in your browser.
 
@@ -68,4 +68,4 @@ The status bar at the bottom right displays real-time connection and sync status
 
 ## Privacy
 
-Your files remain exclusively inside your local vault and your personal Google Drive account. The plugin connects directly to the Google Drive API without routing through any intermediate servers, relays, or proxies. It does not collect analytics, telemetry, or user data of any kind. Google Drive Sync is free and open-source software released under the MIT License by Tanguy Konan (<https://tanguykonan.dev>).
+Your files remain exclusively inside your local vault and your personal Google Drive account. The plugin connects directly to the Google Drive API without routing through any intermediate servers, relays, or proxies. It does not collect analytics, telemetry, or user data of any kind. Google Drive Sync Plus is free and open-source software released under the MIT License by Tanguy Konan (<https://tanguykonan.dev>).

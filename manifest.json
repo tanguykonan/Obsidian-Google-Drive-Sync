@@ -1,6 +1,6 @@
 {
 	"id": "google-drive-sync-plus",
-	"name": "Google Drive Sync",
+	"name": "Google Drive Sync Plus",
 	"version": "1.0.0",
 	"minAppVersion": "1.13.0",
 	"description": "Syncs a vault into your Google Drive for cross-platform use (works for iOS).",
