@@ -518,5 +518,29 @@
 	margin-top: var(--size-2-1);
 }
 
+/* Status Bar UI */
+.gdrive-sync-status-bar {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	cursor: pointer;
+}
+
+.gdrive-sync-status-bar .gdrive-status-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gdrive-sync-status-bar .gdrive-status-icon svg {
+	width: 14px;
+	height: 14px;
+}
+
+.gdrive-sync-status-bar.is-syncing .gdrive-status-icon svg {
+	animation: spin 1.5s linear infinite;
+}
+
+
 
 
