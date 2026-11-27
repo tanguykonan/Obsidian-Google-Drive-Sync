@@ -42,13 +42,8 @@ export const startGoogleOAuthFlow = async (
 	plugin: ObsidianGoogleDrive,
 	customRedirectUri?: string,
 ): Promise<void> => {
-	const clientId = plugin.settings.clientId.trim();
-	if (!clientId) {
-		new Notice(
-			'Please configure a client ID in settings (or use the default connection).',
-			TIMINGS.NOTICE_SHORT_MS,
-		);
-	}
+	const clientId =
+		plugin.settings.clientId.trim() || AUTH_CONFIG.DEFAULT_CLIENT_ID;
 
 	const redirectUri = customRedirectUri || DEFAULT_REDIRECT_URI;
 	const codeVerifier = generateCodeVerifier();
@@ -64,7 +59,7 @@ export const startGoogleOAuthFlow = async (
 	};
 
 	const authUrl = buildGoogleAuthUrl({
-		clientId: clientId || AUTH_CONFIG.DEFAULT_CLIENT_ID,
+		clientId,
 		redirectUri,
 		codeChallenge,
 		state,
@@ -111,7 +106,10 @@ export const handleOAuthProtocolCallback = async (
 
 	const codeVerifier = pendingAuthSession?.codeVerifier || '';
 	const redirectUri = pendingAuthSession?.redirectUri || DEFAULT_REDIRECT_URI;
-	const clientId = plugin.settings.clientId.trim() || pendingAuthSession?.clientId || '';
+	const clientId =
+		plugin.settings.clientId.trim() ||
+		pendingAuthSession?.clientId ||
+		AUTH_CONFIG.DEFAULT_CLIENT_ID;
 	const clientSecret = plugin.settings.clientSecret.trim();
 
 	pendingAuthSession = null;
