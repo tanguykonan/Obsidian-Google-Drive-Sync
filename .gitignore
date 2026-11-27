@@ -31,7 +31,7 @@ data.json
 .obsidian/
 
 # Local examples & internal notes
-examples/
+examples/private
 AGENTS.md
 
 # Environment & local credentials
