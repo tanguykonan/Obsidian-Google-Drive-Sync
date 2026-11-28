@@ -41,7 +41,7 @@
 .operation-container button {
 	width: var(--icon-xl);
 	height: var(--icon-xl);
-	padding: var(--size-2-2) !important;
+	padding: var(--size-2-2);
 }
 
 .operation-file {
